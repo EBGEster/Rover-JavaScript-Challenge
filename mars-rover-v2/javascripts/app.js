@@ -22,7 +22,7 @@ var myRovers = {
 }*/
 
 // Must be sorted in ascendent order
-let obstacles = [[0,3],[2,3],[3,8],[5,2],[8,0],[9,4]]
+let obstacles = [[0,4],[2,3],[3,8],[5,2],[8,0],[9,4]];
 
 let gridArray = [];
 
@@ -33,8 +33,8 @@ for (let i = 0; i<10; i++){
   gridArray[i] = [];
 
   for (let j = 0; j<10; j++){
-  
-    if ((i === obstacles[k][0]) && (j === obstacles[k][1])) {
+    
+    if (obstacles[k] && (i === obstacles[k][0]) && (j === obstacles[k][1])) {
       gridArray [i][j] = 1;
       k++;
     }
@@ -123,7 +123,7 @@ function moveForward(rover){
 }
 
 function moveBackward(rover){
-  console.log("moveForward was called!")
+  console.log("moveBackward was called!")
 
   let y = rover.y;
   let x = rover.x;
